@@ -275,11 +275,10 @@ export default function App() {
         {/* Hero */}
         <div className="mb-8 flex flex-col items-center">
           <div className="relative">
-            <h1 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">
+            <h1 className="mb-4 text-3xl font-bold text-center tracking-tight sm:text-4xl">
               Compress <span className="text-primary underline underline-offset-4">your own</span> PDF Files
             </h1>
 
-            {/* Quirky annotation */}
             <div className="absolute -right-20 -top-5 hidden lg:block">
               <svg
                 width="60"
@@ -353,7 +352,7 @@ export default function App() {
               {/* File Info */}
               <div className="mb-6 flex items-start justify-between">
                 <div className="flex items-center gap-4">
-                  <div className="flex h-12 w-12 items-center justify-center bg-primary/10">
+                  <div className="flex h-12 w-12 items-center justify-center bg-primary/10 shrink-0">
                     <File className="h-6 w-6 text-primary" />
                   </div>
                   <div>
@@ -393,10 +392,10 @@ export default function App() {
                               : "border-border transition-colors hover:border-primary/50"
                           )}
                         >
-                          <p className="font-medium">{level.label}</p>
+                          <p className="font-medium text-xs sm:text-sm">{level.label}</p>
                           <p
                             className={cn(
-                              "text-sm",
+                              "text-xs sm:text-sm",
                               compressionLevel === level.key
                                 ? "text-primary-foreground/80"
                                 : "text-muted-foreground"
@@ -501,7 +500,7 @@ export default function App() {
                       </div>
                     </div>
 
-                    <div className="flex gap-3">
+                    <div className="flex flex-col gap-3 sm:flex-row">
                       <Button
                         onClick={handleDownload}
                         className="flex-1 py-6 text-base transition-colors hover:bg-primary/80"
@@ -619,7 +618,7 @@ export default function App() {
         </Card>
 
         <div className="px-4">
-          <p className="text-muted-foreground text-sm">
+          <p className="text-muted-foreground text-xs">
             This page and its name is inspired by the shell script {" "}
             <a
               href="https://github.com/aklomp/shrinkpdf"
